@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CO:wght@100..400&family=Playwrite+IS:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+IS:wght@100..400&display=swap');
+
+.header {
+    background-color: blue;
+    width: 90%;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    margin-left: 60px;
+
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 2px;
+    margin-bottom: 0;
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.btnCalc {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    color: #fff;
+    width: 9em;
+    height: 3em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 300%;
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+.btnCalc:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+}
+
+@keyframes ani {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.btnCalc:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 20rem;
+    transition: 1s;
+}
+
+.btnCalc:hover::before {
+    filter: blur(20px);
+    border-radius: 20rem;
+}
+
+.btnCalc:active {
+    background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    border-radius: 20rem;
+}
+
+.calculator {
+    --width-of-input: 200px;
+    --border-height: 1px;
+    --border-before-color: rgba(221, 221, 221, 0.39);
+    --border-after-color: #5891ff;
+    --input-hovered-color: #4985e01f;
+    position: relative;
+    width: var(--width-of-input);
+    margin-left: 43%;
+    margin-top: 3%;
+}
+
+/* styling of Input */
+.text-filed {
+    color: #fff;
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+    border-bottom: var(--border-height) solid var(--border-before-color);
+    margin: 8px 0;
+}
+
+/* styling of animated border */
+.input-border {
+    position: absolute;
+    background: var(--border-after-color);
+    width: 5%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+/* Hover on Input */
+.text-filed:hover {
+    background: var(--input-hovered-color);
+}
+
+.text-filed:focus {
+    outline: none;
+}
+
+/* here is code of animated border */
+.text-filed:focus~.input-border {
+    width: 100%;
+}
+
+/* === if you want to do animated border on typing === */
+/* remove input:focus code and uncomment below code */
+/* input:valid ~ .input-border{
+     width: 100%;
+   } */
+
+.lblDisplay {
+    font-size: 120px;
+    color: #fff;
+    margin-left: 42%;
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    top: 650px;
+    left: 1100px;
+    bottom: 0;
+}
+
+.footer h2 {
+    color: #fff;
+    font-family: "Playwrite CO", cursive;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.footer h3 {
+    color: #b91919;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
